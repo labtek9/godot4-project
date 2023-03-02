@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Food" load_steps=2 format=3 uid="uid://bmtgu0v8aquy0"]
+
+[ext_resource type="Script" path="res://Items/Classes/FoodItem.gd" id="1_fmf57"]
+
+[resource]
+script = ExtResource("1_fmf57")
+HEALTH_RESTORED = 2
+ITEM_NAME = "Bread"
+HOVER_TEXT = "Delicious and warm"

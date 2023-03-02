@@ -37,8 +37,7 @@ func get_input():
 		anim.flip_h = true
 	velocity = velocity.normalized() * speed
 	
-
+# checks every game tick for input and movement
 func _physics_process(delta):
-	
 	get_input()
 	move_and_slide()
