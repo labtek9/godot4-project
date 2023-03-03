@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d4jwwqmmxms7i"]
+[gd_scene load_steps=67 format=3 uid="uid://d4jwwqmmxms7i"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_blyfl"]
 [ext_resource type="Texture2D" uid="uid://bxam5gv8eb560" path="res://WorldResources/TX Tileset Grass.png" id="1_njk4l"]
@@ -6,9 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://cbbqkrxkohu5f" path="res://RPGMCharacter_v1.0/_side walk.png" id="2_8f6wr"]
 [ext_resource type="Texture2D" uid="uid://cqvxx7qr8jn4" path="res://RPGMCharacter_v1.0/_down idle.png" id="3_kmfqh"]
 [ext_resource type="Texture2D" uid="uid://blpw1r4orsvkj" path="res://RPGMCharacter_v1.0/_down walk.png" id="4_6v0wu"]
+[ext_resource type="Texture2D" uid="uid://bnc0g0lxl5hyt" path="res://RPGMCharacter_v1.0/_down attack.png" id="4_rj2lk"]
 [ext_resource type="Texture2D" uid="uid://bxt38vghh1jc4" path="res://RPGMCharacter_v1.0/_side idle.png" id="5_y4kfr"]
 [ext_resource type="Texture2D" uid="uid://bsrqv1x2fnpjp" path="res://RPGMCharacter_v1.0/_up idle.png" id="7_8nq2u"]
+[ext_resource type="Texture2D" uid="uid://cjgmk2lf2g41c" path="res://RPGMCharacter_v1.0/_side attack.png" id="7_ywutq"]
 [ext_resource type="Texture2D" uid="uid://cefisbpxjtumm" path="res://RPGMCharacter_v1.0/_up walk.png" id="8_w72ub"]
+[ext_resource type="Texture2D" uid="uid://gsf45q7dyy6" path="res://Sprites/UI_Flat_Frame_02_Lite.png" id="10_ekoh2"]
+[ext_resource type="Texture2D" uid="uid://o4j003ixtbgw" path="res://RPGMCharacter_v1.0/_up attack.png" id="10_thpyo"]
+[ext_resource type="Texture2D" uid="uid://bnqiav250kr17" path="res://Sprites/UI_Flat_Banner_01_Upward.png" id="11_iuflh"]
+[ext_resource type="FontFile" uid="uid://j1bfb5egis4b" path="res://Sprites/rainyhearts.ttf" id="12_ktb0f"]
+[ext_resource type="Texture2D" uid="uid://r8pai17rv58n" path="res://Sprites/UI_Flat_Textfield_02.png" id="13_ii3xr"]
+[ext_resource type="Script" path="res://ITEM_SPRITE.gd" id="14_an04n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1qofl"]
 texture = ExtResource("1_njk4l")
@@ -148,6 +156,18 @@ texture = ExtResource("1_njk4l")
 sources/0 = SubResource("TileSetAtlasSource_1qofl")
 sources/1 = SubResource("TileSetAtlasSource_x4b4p")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_futdp"]
+atlas = ExtResource("4_rj2lk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uump4"]
+atlas = ExtResource("4_rj2lk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdq8j"]
+atlas = ExtResource("4_rj2lk")
+region = Rect2(0, 64, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_otkb2"]
 atlas = ExtResource("3_kmfqh")
 region = Rect2(0, 0, 64, 64)
@@ -192,6 +212,18 @@ region = Rect2(0, 64, 64, 64)
 atlas = ExtResource("4_6v0wu")
 region = Rect2(64, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_keh4m"]
+atlas = ExtResource("7_ywutq")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as4xl"]
+atlas = ExtResource("7_ywutq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvx3a"]
+atlas = ExtResource("7_ywutq")
+region = Rect2(64, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmqxw"]
 atlas = ExtResource("5_y4kfr")
 region = Rect2(0, 0, 64, 64)
@@ -235,6 +267,18 @@ region = Rect2(0, 64, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_t8h1k"]
 atlas = ExtResource("2_8f6wr")
 region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwsvi"]
+atlas = ExtResource("10_thpyo")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej44i"]
+atlas = ExtResource("10_thpyo")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b43vm"]
+atlas = ExtResource("10_thpyo")
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a7saf"]
 atlas = ExtResource("7_8nq2u")
@@ -284,6 +328,20 @@ region = Rect2(64, 64, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_futdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uump4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdq8j")
+}],
+"loop": false,
+"name": &"down att",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_otkb2")
 }, {
 "duration": 1.0,
@@ -300,7 +358,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -323,7 +381,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"down walk",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keh4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as4xl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvx3a")
+}],
+"loop": false,
+"name": &"side att",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -370,6 +442,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_cwsvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej44i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b43vm")
+}],
+"loop": false,
+"name": &"up att",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_a7saf")
 }, {
 "duration": 1.0,
@@ -386,7 +472,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -412,6 +498,20 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_ma26y"]
+resource_name = "down walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3g75w"]
+_data = {
+"down walk": SubResource("Animation_ma26y")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_kecwu"]
+font = ExtResource("12_ktb0f")
+font_size = 46
+font_color = Color(0.301961, 0.301961, 0.301961, 1)
+shadow_size = 0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Managers" type="Node" parent="."]
@@ -431,12 +531,91 @@ layer_0/tile_data = PackedInt32Array(-196613, 131072, 5, -131077, 458752, 3, -65
 script = ExtResource("1_blyfl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Player"]
-position = Vector2(-1, 0)
+position = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_60nvm")
-animation = &"up idle"
+animation = &"up att"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Player"]
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
+zoom = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Player"]
+libraries = {
+"": SubResource("AnimationLibrary_3g75w")
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="inventorycontainer" type="NinePatchRect" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -254.0
+offset_top = -362.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 6
+texture = ExtResource("10_ekoh2")
+
+[node name="title" type="NinePatchRect" parent="CanvasLayer/inventorycontainer"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -28.0
+offset_right = 251.0
+offset_bottom = 53.0
+texture = ExtResource("11_iuflh")
+
+[node name="Label" type="Label" parent="CanvasLayer/inventorycontainer/title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -27.5
+offset_right = 82.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Inventory"
+label_settings = SubResource("LabelSettings_kecwu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="inv container" type="Control" parent="CanvasLayer/inventorycontainer"]
+anchors_preset = 0
+offset_left = 35.0
+offset_top = 55.0
+offset_right = 219.0
+offset_bottom = 319.0
+
+[node name="inv" type="NinePatchRect" parent="CanvasLayer/inventorycontainer/inv container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_ii3xr")
+
+[node name="slot container 1" type="Control" parent="CanvasLayer/inventorycontainer/inv container/inv"]
+anchors_preset = 0
+offset_left = 23.0
+offset_top = 41.0
+offset_right = 63.0
+offset_bottom = 74.0
+
+[node name="ITEM_SPRITE" type="TextureRect" parent="CanvasLayer/inventorycontainer/inv container/inv/slot container 1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_an04n")
+
+[connection signal="animation_finished" from="World/Player/AnimatedSprite2D" to="World/Player" method="_on_animated_sprite_2d_animation_finished"]
